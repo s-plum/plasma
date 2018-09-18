@@ -21,10 +21,18 @@ module.exports = function(grunt) {
             expand: true,
             cwd: "_lib/",
             src: ['solid.scss'],
-            dest: 'dist',
+            dest: '.tmp',
             ext: '.<%= pkg.version %>.css'
           }
         ]
+      }
+    },
+    group_css_media_queries: {
+      lib: {
+          options: {},
+          files: {
+              'dist/solid.<%= pkg.version %>.css' : '.tmp/solid.<%= pkg.version %>.css'
+          }
       }
     },
     cssnano: {
@@ -75,8 +83,9 @@ grunt.loadNpmTasks('grunt-cssnano');
 grunt.loadNpmTasks('grunt-contrib-compress');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-copy');
+grunt.loadNpmTasks('grunt-group-css-media-queries');
 
-grunt.registerTask('prepare_solid_dist', ['sass:lib', 'cssnano:lib', 'copy:latest', 'compress:lib']);
+grunt.registerTask('prepare_solid_dist', ['sass:lib', 'group_css_media_queries:lib', 'cssnano:lib', 'copy:latest', 'compress:lib']);
 grunt.registerTask('dist', ['clean', 'prepare_solid_dist']);
 
 }

@@ -9,7 +9,7 @@
   border: $border;
   border-radius: $border-radius;
   text-decoration: none;
-  color: $text-blue;
+  color: $button-group-primary;
 
   .button-group__radio {
     @include visuallyhidden;
@@ -25,7 +25,7 @@
 
   &:hover {
     transition: background-color .3s ease 0s;
-    background-color: $fill-gray-lighter;
+    background-color: $button-group-highlight;
   }
 
   &:last-of-type {
@@ -35,8 +35,8 @@
 
 .button-group .button-group__radio:checked + .button-group__item,
 .button-group--small .button-group__radio:checked + .button-group__item {
-  background-color: $fill-gray-lighter;
-  color: $text-gray;
+  background-color: $button-group-highlight;
+  color: $button-group-hover;
 }
 
 .button-group--small .button-group__item {

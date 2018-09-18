@@ -1,0 +1,72 @@
+// Text Size
+// -------------------------
+
+@include generate-breakpoint-prefixes {
+  @each $class, $size in $text-sizes {
+    &text-#{$class} {
+      font-size: $size;
+      line-height: map-get($line-heights, $class);
+    }
+  }
+}
+
+// Typography Emphasis and Styling
+// -------------------------
+
+.regular,
+.normal { font-weight:    $regular; }
+
+.bold   { font-weight:    $bold; }
+.italic { font-style:     italic; }
+.caps   { text-transform: uppercase; }
+
+// Text Alignment + Responsive Prefixes
+// -------------------------
+
+@include generate-breakpoint-prefixes {
+  &text-left    { text-align: left; }
+  &text-center  { text-align: center; }
+  &text-right   { text-align: right; }
+  &text-justify { text-align: justify; }
+}
+
+.nowrap { white-space: nowrap; }
+.truncate {
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+}
+
+.decoration-none         { text-decoration: none; }
+.decoration-underline    { text-decoration: underline; }
+.decoration-line-through { text-decoration: line-through; }
+
+// Typeface Classes
+// -------------------------
+
+.serif {
+  font-family: $serif;
+  line-height: 1.1;
+  // Needed b/c chrome still needs prefix
+  // scss-lint:disable VendorPrefix
+  -webkit-font-feature-settings: "liga", "kern";
+  font-feature-settings:         "liga", "kern";
+  @include font-smoothing;
+  &.bold {
+    font-family: $serif; // This is included to override faux-italics applied by browsers
+    font-weight: $regular; // This is included to override faux-bold applied by browsers
+  }
+
+  &.italic { font-family: $serif; }
+}
+
+// List styles
+// -------------------------
+// Unstyled keeps list items block level,
+// just removes default browser padding and list-style
+
+.list-unstyled {
+  margin-left:  0;
+  padding-left: 0;
+  list-style:   none;
+}

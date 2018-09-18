@@ -36,77 +36,77 @@
 }
 
 .page-message--error {
-  background-color: $fill-red-lighter;
-  color: $text-red;
+  background-color: lighten($color-error, 40%);
+  color: $text-error;
 
   .page-message__text,
   .page-message__action {
-    color: $text-red;
+    color: $text-error;
   }
 
   .page-message__icon-close {
-    fill: darken($fill-red-lighter, 20%);
+    fill: lighten($color-error, 20%);
   }
 
   & .page-message__close:hover .page-message__icon-close {
-    fill: $fill-red;
+    fill: $color-error;
   }
 
   .page-message__icon {
-  fill: $fill-red-lighter;
-  background-color: $fill-red;
+    fill: lighten($color-error, 40%);
+    background-color: $color-error;
   }
 
 }
 
 .page-message--success {
-  background-color: $fill-green-lighter;
-  color: $text-green;
+  background-color: lighten($color-success, 40%);
+  color: $text-success;
 
   .page-message__text,
   .page-message__action {
-    color: $text-green;
+    color: $text-success;
   }
 
   .page-message__icon-close {
-    fill: darken($fill-green-lighter, 20%);
+    fill: lighten($color-success, 20%);
   }
 
   & .page-message__close:hover .page-message__icon-close {
-    fill: $fill-green;
+    fill: $color-success;
   }
 
   .page-message__icon {
-  fill: $fill-green-lighter;
-  background-color: $fill-green;
+  fill: lighten($color-success, 40%);
+  background-color: $color-success;
   }
 
 }
 
 .page-message--warning {
-  background-color: lighten($fill-orange, 40%);
-  color: $text-orange;
+  background-color: lighten($color-warning, 40%);
+  color: $text-warning;
 
   .page-message__text,
   .page-message__action {
-    color: $text-orange;
+    color: $text-warning;
   }
 
     .page-message__icon-close {
-    fill: lighten($fill-orange, 20%)
+    fill: lighten($color-warning, 20%);
     }
 
     & .page-message__close:hover .page-message__icon-close {
-      fill: $fill-orange;
+      fill: $color-warning;
     }
   .page-message__icon {
-  fill: lighten($fill-orange, 40%);
-  background-color: $fill-orange;
+  fill: lighten($color-warning, 40%);
+  background-color: $color-warning;
 
   }
 
 }
 
 .page-message__action:hover {
-  color: $text-blue;
+  color: $link-primary;
 }

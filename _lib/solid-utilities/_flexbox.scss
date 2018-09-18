@@ -4,47 +4,42 @@
 
 @include generate-breakpoint-prefixes {
 
-  // &flex is located in './_layout.scss' so that switching on flexbox
-  // at the smallest breakpoint doesn't override all other display mode
-  // rules due to rule order.
+  &flex { display: flex; }
 
   // flex order
-  &flex-order-1 { order: 1                               !important; }
-  &flex-order-2 { order: 2                               !important; }
-  &flex-order-3 { order: 3                               !important; }
+  @for $i from 1 through $generate-flex-orders {
+    &flex-order-#{$i} { order: $i; }
+  }
 
-  // flex grow properties
-  &flex-grow-1  { flex-grow: 1                           !important; }
-  &flex-grow-2  { flex-grow: 2                           !important; }
-  &flex-grow-3  { flex-grow: 3                           !important; }
-
-  // flex shrink properties
-  &flex-shrink-0 { flex-shrink: 0                        !important; }
-  &flex-shrink-1 { flex-shrink: 1                        !important; }
+  // flex grow and shrink properties
+  @for $i from 0 through $generate-flex-sizing {
+    &flex-grow-#{$i} { flex-grow: $i; }
+    &flex-shrink-#{$i} { flex-shrink: $i; }
+  }
 
   // directional properties
-  &flex-row            { flex-direction: row             !important; }
-  &flex-row-reverse    { flex-direction: row-reverse     !important; }
-  &flex-column         { flex-direction: column          !important; }
-  &flex-column-reverse { flex-direction: column-reverse  !important; }
+  &flex-row            { flex-direction: row; }
+  &flex-row-reverse    { flex-direction: row-reverse; }
+  &flex-column         { flex-direction: column; }
+  &flex-column-reverse { flex-direction: column-reverse; }
 
   // flex wrap and nowrap
-  &flex-wrap   { flex-wrap: wrap                         !important; }
-  &flex-nowrap { flex-wrap: nowrap                       !important; }
+  &flex-wrap   { flex-wrap: wrap; }
+  &flex-nowrap { flex-wrap: nowrap; }
 
   // justify content
-  &flex-justify-start         { justify-content: flex-start     !important; }
-  &flex-justify-end           { justify-content: flex-end       !important; }
-  &flex-justify-center        { justify-content: center         !important; }
-  &flex-justify-space-around  { justify-content: space-around   !important; }
-  &flex-justify-space-between { justify-content: space-between  !important; }
+  &flex-justify-start         { justify-content: flex-start; }
+  &flex-justify-end           { justify-content: flex-end; }
+  &flex-justify-center        { justify-content: center; }
+  &flex-justify-space-around  { justify-content: space-around; }
+  &flex-justify-space-between { justify-content: space-between; }
 
   // align items
-  &flex-align-start         { align-items: flex-start         !important; }
-  &flex-align-end           { align-items: flex-end           !important; }
-  &flex-align-center        { align-items: center             !important; }
-  &flex-align-baseline      { align-items: baseline           !important; }
-  &flex-align-space-around  { align-items: space-around     !important; }
-  &flex-align-space-between { align-items: space-between    !important; }
+  &flex-align-start         { align-items: flex-start; }
+  &flex-align-end           { align-items: flex-end; }
+  &flex-align-center        { align-items: center; }
+  &flex-align-baseline      { align-items: baseline; }
+  &flex-align-space-around  { align-items: space-around; }
+  &flex-align-space-between { align-items: space-between; }
 
 }

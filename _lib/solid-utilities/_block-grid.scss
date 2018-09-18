@@ -2,53 +2,32 @@
 // Block Grid Utility Classes
 // --------------------------------------------------
 
-@include generate-breakpoint-prefixes {
-  &block-grid-1,
-  &block-grid-2,
-  &block-grid-3,
-  &block-grid-4,
-  &block-grid-5,
-  &block-grid-6 {
-    font-size: 0        !important;
-    margin: (-$space-1) !important;
-    padding: 0          !important;
+
+@each $size in $generate-block-grid-sizes {
+  @include generate-breakpoint-prefixes {
+    &block-grid-#{$size} {
+      font-size: 0;
+      margin: (-$space-1);
+      padding: 0;
+    }
+
+    &block-grid-#{$size} .block-grid__item { width: calc(#{percentage(1/$size)} - #{$space-2}); }
+
+    &block-grid-#{$size}.no-gutters .block-grid__item { width: percentage(1/$size); }
   }
 }
 
 .block-grid__item {
-  display: inline-block                ;
-  margin: $space-1           !important;
-  font-size: $base-font-size !important;
-  vertical-align: top        !important;
-}
-
-@function calc-width($block-grid-width) {
-  @return calc(#{$block-grid-width} - #{$space-2});
-}
-
-@include generate-breakpoint-prefixes {
-  &block-grid-1 .block-grid__item { width: 100% !important; }
-  &block-grid-2 .block-grid__item { width: calc-width(percentage(1/2)) !important; }
-  &block-grid-3 .block-grid__item { width: calc-width(percentage(1/3)) !important; }
-  &block-grid-4 .block-grid__item { width: calc-width(percentage(1/4)) !important; }
-  &block-grid-5 .block-grid__item { width: calc-width(percentage(1/5)) !important; }
-  &block-grid-6 .block-grid__item { width: calc-width(percentage(1/6)) !important; }
+  display: inline-block;
+  margin: $space-1;
+  font-size: $base-font-size;
+  vertical-align: top;
 }
 
 /*Class to remove margins from block-grid__item and block-grid container*/
 .no-gutters {
-  margin: 0 !important;
+  margin: 0;
   .block-grid__item{
-    margin: 0 !important;
+    margin: 0;
   }
-}
-
-/*Resizes block-grid__item to percentage of block-grid without margins*/
-@include generate-breakpoint-prefixes {
-  &block-grid-1.no-gutters .block-grid__item { width: 100% !important; }
-  &block-grid-2.no-gutters .block-grid__item { width: (percentage(1/2)) !important; }
-  &block-grid-3.no-gutters .block-grid__item { width: (percentage(1/3)) !important; }
-  &block-grid-4.no-gutters .block-grid__item { width: (percentage(1/4)) !important; }
-  &block-grid-5.no-gutters .block-grid__item { width: (percentage(1/5)) !important; }
-  &block-grid-6.no-gutters .block-grid__item { width: (percentage(1/6)) !important; }
 }

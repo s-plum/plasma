@@ -4,7 +4,7 @@
 
 //Base Tag Styling
 .tag {
-  background-color: $fill-white;
+  background-color: $color-blank;
   border: $border;
   border-radius: $border-radius;
   display: inline-block;
@@ -32,7 +32,7 @@
 
 .tag__delete-icon {
   width: .625rem;
-  fill: $fill-gray;
+  fill: $tags-button;
   vertical-align: middle;
   transition: 200ms;
   transition-timing-function: ease-in-out;
@@ -42,7 +42,7 @@
   margin-left: 1px;
 
   &:hover {
-    fill: darken($fill-gray, 40%);
+    fill: darken($tags-button, 40%);
   }
 }
 
@@ -50,7 +50,7 @@
 	padding: 0 .3125rem;
 		&:hover {
 	  	.tag__delete-icon {
-	    	fill: darken($fill-gray, 40%);
+	    	fill: darken($tags-button, 40%);
 	  	}
 		}
 }

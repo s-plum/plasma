@@ -23,7 +23,7 @@
 .modal__content {
   @include prefix((animation-duration: .15s), webkit);
   @include prefix((animation-fill-mode: both), webkit);
-  background: $fill-white;
+  background: $color-blank;
   border: $border;
   border-radius: 3px;
   margin: 0 auto;
@@ -43,7 +43,7 @@
     cursor: pointer;
 
       .modal__close-icon {
-        fill: $fill-gray-darker;
+        fill: darken($link-secondary, 20%);
       }
   }
 }
@@ -51,7 +51,7 @@
 
 .modal__close-icon {
   width: 1.5rem;
-  fill: $fill-gray;
+  fill: $link-secondary;
 }
 
 

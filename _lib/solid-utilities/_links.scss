@@ -1,0 +1,20 @@
+// Link Styles
+// -------------------------
+
+@each $name, $color in $link-colors {
+  .link-#{$name} {
+    @include link-style(map_get($link-colors, $name), map_get($link-hover-colors, $name));
+  }
+}
+
+// Social Link Styles
+// -------------------------
+
+// Social Fill Colors
+// -------------------------
+@each $network in $generate-social {
+  .link-#{$network} {
+    color: map-get($color-social, $network);
+    &:hover { color: darken(map-get($color-social, $network), 20%) !important; }
+  }
+}

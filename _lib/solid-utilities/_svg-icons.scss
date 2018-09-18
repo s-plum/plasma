@@ -5,43 +5,10 @@
 // SVG Sizes
 // -------------------------
 
-
-.svg-1, 
-.svg-2,
-.svg-3, 
-.svg-4, 
-.svg-5, 
-.svg-6 {
-	vertical-align: middle	!important;
+@each $size in $generate-svg-sizes {
+	.svg-#{$size} {
+		vertical-align: middle;
+		width: map-get($text-sizes, $size);
+		height: map-get($text-sizes, $size);
+	}
 }
-
-.svg-6 {
-	width: $text-6		!important;
-	height: $text-6		!important;
-}
-
-.svg-5 {
-	width: $text-5		!important;
-	height: $text-5		!important;
-}
-
-.svg-4 {
-	width: $text-4		!important;
-	height: $text-4		!important;
-}
-
-.svg-3 {
-	width: $text-3		!important;
-	height: $text-3		!important;
-}
-
-.svg-2 {
-	width: $text-2		!important;
-	height: $text-2		!important;
-}
-
-.svg-1 {
-	width: $text-1		!important;
-	height: $text-1		!important;
-}
-

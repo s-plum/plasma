@@ -15,8 +15,8 @@
     position: relative;
     border: $border;
     text-decoration: none;
-    color: $text-blue;
-    background: $fill-white;
+    color: $pagination-primary;
+    background: $color-blank;
     float: left;
     transition: background-color .15s ease 0s;
 
@@ -26,12 +26,12 @@
 
     &:hover {
       transition: background-color .15s ease 0s;
-      background-color: $fill-gray-lighter;
+      background-color: $pagination-hover;
     }
 
     &:active {
       transition: background-color .15s ease 0s;
-      background-color: darken($fill-gray-lighter, 5%);
+      background-color: darken($pagination-hover, 5%);
     }
   }
 
@@ -55,7 +55,7 @@
   .pagination__button--prev-icon,
   .pagination__button--next-icon {
     width: .875rem;
-    fill: $fill-blue;
+    fill: $pagination-primary;
     position: relative;
     top: 2px;
   }
@@ -70,7 +70,7 @@
 
   .pagination__button--disabled:hover {
     cursor: auto;
-    background-color: $fill-white;
+    background-color: $color-blank;
   }
 
   .pagination__button--disabled {

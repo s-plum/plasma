@@ -1,0 +1,136 @@
+//
+// Theme Variables - Specific to Solid Design
+// --------------------------------------------------
+
+// Fills
+$fill-red:             #e32    !default;
+$fill-red-lighter:     #feebe9 !default;
+$fill-pink:            #f43192 !default;
+$fill-blue:            #0f65ef !default;
+$fill-purple:          #6645dd !default;
+$fill-yellow:          #ffee00 !default;
+$fill-yellow-lighter:  #fffab6 !default;
+$fill-teal:            #0dccb0 !default;
+$fill-green:           #68af15 !default;
+$fill-green-lighter:   #e1efd0 !default;
+$fill-orange:          #f47f16 !default;
+$fill-promoted-orange: #f7ad19 !default;
+$fill-gray-lighter:    #f4f4f4 !default;
+$fill-gray:            #aaa    !default;
+$fill-gray-darker:     #222    !default;
+$fill-white:           #fff    !default;
+
+// Type Colors
+$text-white:           #fff    !default;
+$text-gray:            #222    !default;
+$text-gray-lighter:    #666    !default;
+$text-gray-lightest:   #999    !default;
+$text-red:             #e32    !default;
+$text-pink:            #f43192 !default;
+$text-orange:          #f47f16 !default;
+$text-promoted-orange: #f7ad19 !default;
+$text-purple:          #6645dd !default;
+$text-green:           #68af15 !default;
+$text-blue:            #0f65ef !default;
+
+// Variable Overrides - Fonts
+// ------------------------
+$sans: "Proxima Nova", Helvetica, Arial, sans-serif !default;
+$serif: "Caponi-Slab-Semibold", "Proxima Nova", Helvetica, Arial, sans-serif !default;
+
+// Variable Overrides - Colors
+// ------------------------
+$color-primary: $fill-red;
+$color-primary-lighter: $fill-red-lighter;
+$color-secondary: $fill-blue;
+$color-secondary-lighter: lighten($fill-blue, 10%);
+$color-form-field: $fill-blue;
+
+// @todo - ideally refs in the theme to these colors specifically would only use map-get. Keeping the vars above in place for backwards compatibility
+$colors: (
+  primary: $color-primary,
+  primary-lighter: $color-primary-lighter,
+  secondary: $color-secondary,
+  secondary-lighter: $color-secondary-lighter,
+  blank: $color-blank,
+  red: $fill-red,
+  red-lighter: $fill-red-lighter,
+  pink: $fill-pink,
+  blue: $fill-blue,
+  purple: $fill-purple,
+  yellow: $fill-yellow,
+  yellow-lighter: $fill-yellow-lighter,
+  teal: $fill-teal,
+  green: $fill-green,
+  green-lighter: $fill-green-lighter,
+  orange: $fill-orange,
+  promoted-orange: $fill-promoted-orange,
+  gray-lighter: $fill-gray-lighter,
+  gray-darker: $fill-gray-darker, // @todo - english mode for "grey"
+  white: $fill-white,
+);
+
+$text-colors: (
+  primary: $text-primary,
+  primary-lighter: $text-primary-lighter,
+  secondary: $text-secondary,
+  secondary-lighter: $text-secondary-lighter,
+  white: $text-white,
+  gray: $text-gray,
+  gray-lighter: $text-gray-lighter,
+  red: $text-red,
+  pink: $text-pink,
+  orange: $text-orange,
+  promoted-orange: $text-promoted-orange,
+  purple: $text-purple,
+  green: $text-green,
+  blue: $text-blue,
+);
+
+$link-primary: $text-blue;
+
+$link-colors: (
+  blue: $text-blue,
+  gray: $text-gray,
+  gray-lighter: $text-gray-lightest,
+  white: $text-white,
+);
+
+$link-hover-colors: (
+  blue: darken($text-blue, 20%),
+  gray: $text-blue,
+  gray-lighter: $text-gray,
+  white: darken($text-white, 20%),
+);
+
+
+// Font-Specific Typography Rules
+// ------------------------
+
+// serif should never be an h6 or .type-6
+.text-6 .serif,
+.serif.text-6 {
+  font-family: $sans    !important;
+  font-weight: $regular !important;
+}
+
+// Caponi Specific Line-Height Per Font-Size
+.text-1.serif,
+.text-2.serif,
+.text-3.serif,
+.text-4.serif,
+.text-5.serif {
+  line-height: 1.1 !important;
+}
+
+// Caponi should never be an h6 or .type-6,
+// these classes disallow that from happening
+// (type will default to Proxima)
+
+// scss-lint:disable QualifyingElement
+.slab h6,
+  // scss-lint:enable QualifyingElement
+h6.slab {
+  font-family: $sans;
+  font-weight: $regular;
+}

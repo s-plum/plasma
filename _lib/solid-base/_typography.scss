@@ -9,38 +9,38 @@ html {
 
 body {
   font-size:   $text-4;
-  line-height: $line-height-3;
-  color:       $text-gray;
+  line-height: $line-height-body;
+  color:       $text-primary;
 }
 
 h1 {
   font-size:   $text-1;
-  line-height: $line-height-1;
+  line-height: $line-height-heading-large;
 }
 
-h2 { 
+h2 {
   font-size:   $text-2;
-  line-height: $line-height-1;
+  line-height: $line-height-heading-large;
 }
 
-h3 { 
+h3 {
   font-size:   $text-3;
-  line-height: $line-height-1;
+  line-height: $line-height-heading-large;
 }
 
 h4 {
   font-size:   $text-4;
-  line-height: $line-height-2;
+  line-height: $line-height-heading-small;
 }
 
-h5 { 
+h5 {
   font-size:   $text-5;
-  line-height: $line-height-2;
+  line-height: $line-height-heading-small;
 }
 
-h6 { 
+h6 {
   font-size:   $text-6;
-  line-height: $line-height-2;
+  line-height: $line-height-heading-small;
 }
 
 //  Unbold header elements by default
@@ -48,28 +48,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-// Caponi should never be an h6 or .type-6, 
-// these classes disallow that from happening
-// (type will default to Proxima)
-
-// scss-lint:disable QualifyingElement
-.slab h6,
-// scss-lint:enable QualifyingElement
-h6.slab {
-  font-family: $sans;
-  font-weight: $regular;
-}
-
-// This is getting the color from $text-blue 
-// instead of $link-blue because $link-blue 
+// This is getting the color from $text-blue
+// instead of $link-blue because $link-blue
 // does not exist as a variable. .link-blue
 // using the $text-blue variable
 a {
-  text-decoration: none; 
-  color: $text-blue;
+  text-decoration: none;
+  color: $link-primary;
 
   &:hover {
-    color: darken($text-blue, 20%);
+    color: $link-primary-hover;
     transition: color .15s ease 0s;
   }
 }

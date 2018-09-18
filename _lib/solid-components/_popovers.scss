@@ -2,9 +2,6 @@
 // Popovers
 // --------------------------------------------------
 
-$popover-bg-caret-size: .5875rem;
-$popover-fg-caret-size: .525rem;
-
 .popover-right, .popover-left, .popover-bottom, .popover-top {
   display: inline-block;
   width: auto;
@@ -13,7 +10,7 @@ $popover-fg-caret-size: .525rem;
   font-size: $text-5;
   box-shadow: 0 1px 1px rgba(173, 168, 168, .1);
   border: $border-lighter;
-  background-color: $fill-white;
+  background-color: $color-blank;
   border-radius: $border-radius;
 
   // shared styles between right, left, bottom, and top caret for the popover
@@ -62,23 +59,23 @@ $popover-fg-caret-size: .525rem;
   }
 
   &:before {
-    border-right-color: lighten($fill-gray, 20%);
+    border-right-color: lighten($popover-shadow, 20%);
   }
 
   &:after {
-    border-right-color: $fill-white;
+    border-right-color: $color-blank;
   }
 
   &--gray {
-    background-color: $fill-gray-darker;
+    background-color: $popover-dark;
     border: none;
     color: white;
     &:before {
-      border-right-color: $fill-gray-darker;
+      border-right-color: $popover-dark;
     }
 
     &:after {
-      border-right-color: $fill-gray-darker;
+      border-right-color: $popover-dark;
     }
   }
 }
@@ -92,23 +89,23 @@ $popover-fg-caret-size: .525rem;
   }
 
   &:before {
-    border-left-color: lighten($fill-gray, 20%);
+    border-left-color: lighten($popover-shadow, 20%);
   }
 
   &:after {
-    border-left-color: $fill-white;
+    border-left-color: $color-blank;
   }
 
   &--gray {
-    background-color: $fill-gray-darker;
+    background-color: $popover-dark;
     border: none;
     color: white;
     &:before {
-      border-left-color: $fill-gray-darker;
+      border-left-color: $popover-dark;
     }
 
     &:after {
-      border-left-color: $fill-gray-darker;
+      border-left-color: $popover-dark;
     }
   }
 }
@@ -134,24 +131,24 @@ $popover-fg-caret-size: .525rem;
   }
 
   &:before {
-    border-bottom-color: lighten($fill-gray, 20%);
+    border-bottom-color: lighten($popover-shadow, 20%);
   }
 
   &:after {
-    border-bottom-color: $fill-white;
+    border-bottom-color: $color-blank;
   }
 
   &--gray {
-    background-color: $fill-gray-darker;
+    background-color: $popover-dark;
     border: none;
     color: white;
 
     &:before {
-      border-bottom-color: $fill-gray-darker;
+      border-bottom-color: $popover-dark;
     }
 
     &:after {
-      border-bottom-color: $fill-gray-darker;
+      border-bottom-color: $popover-dark;
     }
   }
 }
@@ -164,24 +161,24 @@ $popover-fg-caret-size: .525rem;
   }
 
   &:before {
-    border-top-color: lighten($fill-gray, 20%);
+    border-top-color: lighten($popover-shadow, 20%);
   }
 
   &:after {
-    border-top-color: $fill-white;
+    border-top-color: $color-blank;
   }
 
   &--gray {
-    background-color: $fill-gray-darker;
+    background-color: $popover-dark;
     border: none;
     color: white;
 
     &:before {
-      border-top-color: $fill-gray-darker;
+      border-top-color: $popover-dark;
     }
 
     &:after {
-      border-top-color: $fill-gray-darker;
+      border-top-color: $popover-dark;
     }
   }
 }

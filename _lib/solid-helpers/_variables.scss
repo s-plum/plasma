@@ -1,139 +1,227 @@
 //
-// Variables
+// Generic Variables
 // --------------------------------------------------
 
 // Config
 // -------------------------
 
-// set to false to make responsive
-// mixin give only xs- versions of
-// responsive classes
-$generate-responsive-classes: true !default;
-
 // Controls whether or not we use font sizing.
 // See the font-smoothing mixin in _mixins.scss
-$font-smoothing: true !default;
+$font-smoothing: true;
 
-// Fonts
-// -------------------------
+// Controls which breakpoints are generated. Used by generate-breakpoint-prefixes mixin
+$generate-breakpoints: "xs", "sm", "md", "lg";
 
-$sans: "Proxima Nova", Helvetica, Arial, sans-serif !default;
-$slab: "Caponi-Slab-Semibold", "Proxima Nova", Helvetica, Arial, sans-serif !default;
+// Number of block grid classes available in utilities/block-grid
+$generate-block-grid-sizes: 1, 2, 3, 4, 5, 6;
+
+// Color, link, and button helper classes
+$generate-social: "facebook", "twitter", "google", "linkedin", "pinterest", "tumblr", "youtube", "instagram", "vine", "snapchat", "rss", "sms", "apple-news";
+
+// CSS "grid" (floated div) class helpers
+$generate-grid-columns: 12;
+
+// Flexbox
+$generate-flex-orders: 3;
+$generate-flex-sizing: 3;
+
+// SVG icon classes
+$generate-svg-sizes: 1, 2, 3, 4, 5, 6; // columns and orders are sequential, sizes are not
+
+// Text Sizes
+$generate-text-sizes: 1, 2, 3, 4, 5, 6;
 
 // Borders
 // -------------------------
 
-$border:         1px solid rgba(0, 0, 0, .2) !default;
-$border-lighter: 1px solid rgba(0, 0, 0, .1) !default;
-$border-radius:  3px !default;
+$border:         1px solid rgba(0, 0, 0, .2);
+$border-lighter: 1px solid rgba(0, 0, 0, .1);
+$border-radius:  3px;
 
 
 // Spacing
 // -------------------------
 
-$space-05: .25rem !default; // 4px
-$space-1: .5rem   !default; // 8px
-$space-2:   1rem  !default; // 16px
-$space-3: 1.5rem  !default; // 24px
-$space-4:   2rem  !default; // 32px
-$space-5:   3rem  !default; // 48px
-$space-6: 4.5rem  !default; // 72px
+$space-05: .25rem; // 4px
+$space-1: .5rem; // 8px
+$space-2:   1rem; // 16px
+$space-3: 1.5rem; // 24px
+$space-4:   2rem; // 32px
+$space-5:   3rem; // 48px
+$space-6: 4.5rem; // 72px
+
+// Margins and padding
+$generate-spacing-map: (
+  "0": 0,
+  "05": $space-05,
+  "1": $space-1,
+  "2": $space-2,
+  "3": $space-3,
+  "4": $space-4,
+  "5": $space-5,
+  "6": $space-6,
+);
 
 // Z-index
 // -------------------------
-$z1: 100 !default;
-$z2: 200 !default;
-$z3: 300 !default;
-$z4: 400 !default;
+$z1: 100;
+$z2: 200;
+$z3: 300;
+$z4: 400;
 
 // Colors
 // -------------------------
+$color-primary: #e32;
+$color-primary-lighter: lighten($color-primary, 10%);
+$color-secondary: #0f65ef;
+$color-secondary-lighter: lighten($color-secondary, 10%);
+$color-blank: #fff; // For empty space or for disabling items by making them blend in to empty space - this is usually white but could be black in "dark mode"
+$color-form-field: #0f65ef;
+$color-warning: #f47f16;
+$color-error: #e32;
+$color-success: #68af15;
 
-// Fills
-$fill-red:             #e32    !default;
-$fill-red-lighter:     #feebe9 !default;
-$fill-pink:            #f43192 !default;
-$fill-blue:            #0f65ef !default;
-$fill-purple:          #6645dd !default;
-$fill-yellow:          #ffee00 !default;
-$fill-yellow-lighter:  #fffab6 !default;
-$fill-teal:            #0dccb0 !default;
-$fill-green:           #68af15 !default;
-$fill-green-lighter:   #e1efd0 !default;
-$fill-orange:          #f47f16 !default;
-$fill-promoted-orange: #f7ad19 !default;
-$fill-gray-lighter:    #f4f4f4 !default;
-$fill-gray:            #aaa    !default;
-$fill-gray-darker:     #222    !default;
-$fill-white:           #fff    !default;
+$colors: (
+  primary: $color-primary,
+  primary-lighter: $color-primary-lighter,
+  secondary: $color-secondary,
+  secondary-lighter: $color-secondary-lighter,
+  blank: $color-blank,
+  form-field: $color-form-field,
+  warning: $color-warning,
+  error: $color-error,
+  success: $color-success,
+);
 
-// Social Fills
-$fill-facebook:  #3b5998    !default;
-$fill-twitter:   #55acee    !default;
-$fill-google:    #dd4b39    !default;
-$fill-linkedin:  #0077b5    !default;
-$fill-pinterest: #bd081c    !default;
-$fill-tumblr:    #36465d    !default;
-$fill-youtube:   #FF0000    !default;
-$fill-instagram: #000000    !default;
-$fill-buzzfeed:  $fill-red  !default;
-$fill-vine:      #00b488    !default;
-$fill-snapchat:  #fffc00    !default;
+$text-primary: #000;
+$text-primary-lighter: lighten($text-primary, 10%);
+$text-secondary: #666;
+$text-secondary-lighter: lighten($text-secondary, 10%);
+$text-warning: #f47f16;
+$text-error: #e32;
+$text-success: #68af15;
 
-// Type Colors
-$text-white:           #fff    !default;
-$text-gray:            #222    !default;
-$text-gray-lighter:    #666    !default;
-$text-gray-lightest:   #999    !default;
-$text-red:             #e32    !default;
-$text-pink:            #f43192 !default;
-$text-orange:          #f47f16 !default;
-$text-promoted-orange: #f7ad19 !default;
-$text-purple:          #6645dd !default;
-$text-green:           #68af15 !default;
-$text-blue:            #0f65ef !default;
 
-// Social Type Colors
-$text-facebook:  #3b5998 !default;
-$text-twitter:   #55acee !default;
-$text-google:    #dd4b39 !default;
-$text-linkedin:  #0077b5 !default;
-$text-pinterest: #bd081c !default;
-$text-tumblr:    #36465d !default;
-$text-youtube:   #FF0000 !default;
-$text-instagram: #000000 !default;
+$text-colors: (
+  primary: $text-primary,
+  primary-lighter: $text-primary-lighter,
+  secondary: $text-secondary,
+  secondary-lighter: $text-secondary-lighter,
+  warning: $text-warning,
+  error: $text-error,
+  success: $text-success,
+);
+
+$link-primary: #0f65ef;
+$link-primary-hover: darken($link-primary, 20%);
+$link-secondary: #222;
+$link-secondary-hover: #0f65ef;
+$link-inverse: #fff;
+$link-inverse-hover: darken($link-inverse, 20%);
+
+$link-colors: (
+  primary: $link-primary,
+  secondary: $link-secondary,
+  inverse: $link-inverse,
+);
+
+$link-hover-colors: (
+  primary: $link-primary-hover,
+  secondary: $link-secondary-hover,
+  inverse: $link-inverse-hover,
+);
+
+// Social Colors
+$color-social: (
+  facebook: #3b5998,
+  twitter: #55acee,
+  google: #dd4b39,
+  linkedin: #0077b5,
+  pinterest: #bd081c,
+  tumblr: #36465d,
+  youtube: #FF0000,
+  instagram: #000000,
+  buzzfeed: #e32,
+  vine: #00b488,
+  snapchat: #fffc00,
+  sms: #68af15,
+  rss: #f47f16,
+  apple-news: #222,
+);
 
 // Typography Sizes and Weights
 // -------------------------
 
-$base-font-size: 16px !default;
+$sans: sans-serif;
+$serif: serif;
 
-$text-1: 1.75rem  !default; // 28px
-$text-2: 1.375rem !default; // 22px
-$text-3: 1.125rem !default; // 18px
-$text-4: 1rem     !default; // 16px
-$text-5: .875rem  !default; // 14px
-$text-6: .75rem   !default; // 12px
+$base-font-size: 16px;
 
-$regular: 400 !default;
-$bold: 600    !default;
-$xbold: 700   !default;
+// @todo (maybe) - generate everything dynamically from the base text-4?
+$text-1: 1.75rem; // 28px
+$text-2: 1.375rem; // 22px
+$text-3: 1.125rem; // 18px
+$text-4: 1rem; // 16px
+$text-5: .875rem; // 14px
+$text-6: .75rem; // 12px
+
+$text-sizes: (
+  1: $text-1,
+  2: $text-2,
+  3: $text-3,
+  4: $text-4,
+  5: $text-5,
+  6: $text-6,
+);
+
+$regular: 400;
+$bold: 600;
+$xbold: 700;
 
 // Line height
 // -------------------------
 // Using a unitless system for consistency.
 // https://css-tricks.com/almanac/properties/l/line-height/
 
-$line-height-1: 1.2 !default; // set on h1-h3 and .text-1-.text-3
-$line-height-2: 1.3 !default; // set on h4-h6 and .text-4-.text-6
-$line-height-3: 1.5 !default; // default line-height set on the body
+$line-height-heading-large: 1.2; // set on h1-h3 and .text-1-.text-3
+$line-height-heading-small: 1.3; // set on h4-h6 and .text-4-.text-6
+$line-height-body: 1.5; // default line-height set on the body
+
+$line-heights: (
+  1: $line-height-heading-large,
+  2: $line-height-heading-large,
+  3: $line-height-heading-large,
+  4: $line-height-heading-small,
+  5: $line-height-heading-small,
+  6: $line-height-heading-small,
+);
 
 // Line heights specific to forms, buttons and tags.
-$line-height-form:       1.5rem  !default;
-$line-height-form-small: 1.25rem !default;
+$line-height-form:       1.5rem;
+$line-height-form-small: 1.25rem;
 
 // Disabled opacity for buttons, forms, pagination
-$opacity-disabled: .3 !default;
+$opacity-disabled: .3;
+
+// Solid Components
+// -------------------------
+// Button Groups
+$button-group-primary: $link-primary;
+$button-group-hover: $link-secondary;
+$button-group-highlight: #f4f4f4;
+
+// Pagination
+$pagination-primary: $link-primary;
+$pagination-hover: #f4f4f4;
+
+// Popovers
+$popover-bg-caret-size: .5875rem;
+$popover-fg-caret-size: .525rem;
+$popover-shadow: #aaa;
+$popover-dark: 222;
+
+// Tags
+$tags-button: #aaa;
 
 // SVG
 // -------------------------
@@ -149,6 +237,3 @@ $solid-logo: "%3Csvg%20width%3D%22100%22%20height%3D%2234%22%20viewBox%3D%220%20
 $close-icon: "%3Csvg%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%3Ctitle%3EArtboard%201%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cpath%20d%3D%22M256%20302.855l-187.452%20187.452c-12.952%2012.952-33.885%2012.907-46.823-.032-12.912-12.912-12.952-33.902-.032-46.823l187.452-187.452-187.452-187.452c-12.952-12.952-12.907-33.885.032-46.823%2012.912-12.912%2033.902-12.952%2046.823-.032l187.452%20187.452%20187.452-187.452c12.952-12.952%2033.885-12.907%2046.823.032%2012.912%2012.912%2012.952%2033.902.032%2046.823l-187.452%20187.452%20187.452%20187.452c12.952%2012.952%2012.907%2033.885-.032%2046.823-12.912%2012.912-33.902%2012.952-46.823.032l-187.452-187.452z%22/%3E%3C/svg%3E" !default;
 $close-icon--thick: "%3Csvg%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ctitle%3Eclose-thick%3C/title%3E%3Cpath%20d%3D%22M164.874%20258.048L50.198%20139.276c-25.597-25.597-25.597-63.48%200-89.078%2025.597-25.597%2063.48-25.597%2089.078%200l114.676%20114.676L368.628%2050.198c25.597-25.597%2068.09-25.597%2093.174%200%2025.597%2025.597%2025.597%2068.09%200%2093.174L347.126%20258.048l114.676%20114.676c25.597%2025.597%2025.597%2063.48%200%2089.078-25.597%2025.597-63.48%2025.597-89.078%200L258.048%20347.126%20143.372%20461.802c-25.597%2025.597-68.09%2025.597-93.174%200-25.597-25.597-25.597-68.09%200-93.174l114.676-110.58z%22%20fill%3D%22%234A4A4A%22%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E" !default;
 $close-icon--light: "%3Csvg%20width%3D%22450%22%20height%3D%22450%22%20viewBox%3D%220%200%20450%20450%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ctitle%3Eclose-thick%3C/title%3E%3Cpath%20d%3D%22M133.874%20227.048L19.198%20108.276C-6.4%2082.68-6.4%2044.796%2019.198%2019.198c25.597-25.597%2063.48-25.597%2089.078%200l114.676%20114.676L337.628%2019.198c25.597-25.597%2068.09-25.597%2093.174%200%2025.597%2025.597%2025.597%2068.09%200%2093.174L316.126%20227.048l114.676%20114.676c25.597%2025.597%2025.597%2063.48%200%2089.078-25.597%2025.597-63.48%2025.597-89.078%200L227.048%20316.126%20112.372%20430.802c-25.597%2025.597-68.09%2025.597-93.174%200-25.597-25.597-25.597-68.09%200-93.174l114.676-110.58z%22%20fill%3D%22%23B3B3B3%22%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E" !default;
-
-// @TODO Remove in 3.0
-$exclamation-circle: "%3Csvg%20width%3D%22488%22%20height%3D%22488%22%20viewBox%3D%220%200%20488%20488%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%09%3Cpath%20d%3D%22M244%200c-134.708%200-244%20109.292-244%20244s109.292%20244%20244%20244%20244-109.292%20244-244-109.292-244-244-244zm40.667%20396.182c0%205.719-4.448%2010.484-9.849%2010.484h-61c-5.719%200-10.484-4.766-10.484-10.484v-60.365c0-5.719%204.766-10.484%2010.484-10.484h61c5.401%200%209.849%204.766%209.849%2010.484v60.365zm-.635-109.292c-.318%204.448-5.083%207.943-10.802%207.943h-58.776c-6.036%200-10.802-3.495-10.802-7.943l-5.401-197.297c0-2.224.953-4.448%203.177-5.719%201.906-1.589%204.766-2.542%207.625-2.542h69.896c2.859%200%205.719.953%207.625%202.542%202.224%201.271%203.177%203.495%203.177%205.719l-5.719%20197.297z%22%20fill%3D%22%23e32%22/%3E%3C/svg%3E" !default;
