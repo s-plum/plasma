@@ -25,3 +25,10 @@ For more details check out the [Solid Docs](https://solid.buzzfeed.com/).
 
 ## Developing Plasma
 Any BuzzFeed employee can contribute to Plasma or Solid. See [Contributing to Solid](https://github.com/buzzfeed/solid/blob/master/CONTRIBUTING.md) and [Developing Solid](https://github.com/buzzfeed/solid/blob/master/DEVELOPING.md).
+
+## Todos
+- [ ] Better usage docs
+- [ ] Check theme file - make sure all items are defined
+- [ ] Bpager smoke test to make sure classes carry over
+- [ ] Release as Solid 3.0-alpha
+- [ ] Break things
