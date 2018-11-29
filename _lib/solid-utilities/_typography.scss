@@ -8,33 +8,33 @@
 @include generate-breakpoint-prefixes {
 
   &text-1 {
-    font-size: $text-1          !important;
-    line-height: $line-height-1 !important;
+    font-size: $text-1         ;
+    line-height: $line-height-1;
   }
 
   &text-2 {
-    font-size: $text-2          !important;
-    line-height: $line-height-1 !important;
+    font-size: $text-2         ;
+    line-height: $line-height-1;
   }
 
   &text-3 {
-    font-size: $text-3          !important;
-    line-height: $line-height-1 !important;
+    font-size: $text-3         ;
+    line-height: $line-height-1;
   }
 
   &text-4 {
-    font-size: $text-4          !important;
-    line-height: $line-height-2 !important;
+    font-size: $text-4         ;
+    line-height: $line-height-2;
   }
 
   &text-5 {
-    font-size: $text-5          !important;
-    line-height: $line-height-2 !important;
+    font-size: $text-5         ;
+    line-height: $line-height-2;
   }
 
   &text-6 {
-    font-size: $text-6          !important;
-    line-height: $line-height-2 !important;
+    font-size: $text-6         ;
+    line-height: $line-height-2;
   }
 }
 
@@ -42,57 +42,57 @@
 // -------------------------
 
 .regular,
-.normal { font-weight:    $regular  !important; }
+.normal { font-weight:    $regular ; }
 
-.bold   { font-weight:    $bold     !important; }
-.italic { font-style:     italic    !important; }
-.caps   { text-transform: uppercase !important; }
+.bold   { font-weight:    $bold    ; }
+.italic { font-style:     italic   ; }
+.caps   { text-transform: uppercase; }
 
 // Text Alignment + Responsive Prefixes
 // -------------------------
 
 @include generate-breakpoint-prefixes {
-  &text-left    { text-align: left    !important; }
-  &text-center  { text-align: center  !important; }
-  &text-right   { text-align: right   !important; }
-  &text-justify { text-align: justify !important; }
+  &text-left    { text-align: left   ; }
+  &text-center  { text-align: center ; }
+  &text-right   { text-align: right  ; }
+  &text-justify { text-align: justify; }
 }
 
-.nowrap { white-space: nowrap !important; }
+.nowrap { white-space: nowrap; }
 .truncate {
-  white-space:   nowrap   !important;
-  overflow:      hidden   !important;
-  text-overflow: ellipsis !important;
+  white-space:   nowrap  ;
+  overflow:      hidden  ;
+  text-overflow: ellipsis;
 }
 
-.decoration-none         { text-decoration: none         !important; }
-.decoration-underline    { text-decoration: underline    !important; }
-.decoration-line-through { text-decoration: line-through !important; }
+.decoration-none         { text-decoration: none        ; }
+.decoration-underline    { text-decoration: underline   ; }
+.decoration-line-through { text-decoration: line-through; }
 
 // Typeface Classes
 // -------------------------
 
 .slab {
-  font-family: $slab !important;
-  line-height: 1.1   !important;
+  font-family: $slab;
+  line-height: 1.1  ;
   // Needed b/c chrome still needs prefix
   // scss-lint:disable VendorPrefix
-  -webkit-font-feature-settings: "liga", "kern" !important;
-  font-feature-settings:         "liga", "kern" !important;
+  -webkit-font-feature-settings: "liga", "kern";
+  font-feature-settings:         "liga", "kern";
   @include font-smoothing;
   &.bold {
-    font-family: $slab    !important; // This is included to override faux-italics applied by browsers
-    font-weight: $regular !important; // This is included to override faux-bold applied by browsers
+    font-family: $slab   ; // This is included to override faux-italics applied by browsers
+    font-weight: $regular; // This is included to override faux-bold applied by browsers
   }
 
-  &.italic { font-family: $slab !important; }
+  &.italic { font-family: $slab; }
 }
 
 // Slab should never be an h6 or .type-6
 .text-6 .slab,
 .slab.text-6 {
-  font-family: $sans    !important;
-  font-weight: $regular !important;
+  font-family: $sans   ;
+  font-weight: $regular;
 }
 
 // Caponi Specific Line-Height Per Font-Size
@@ -101,7 +101,7 @@
 .text-3.slab,
 .text-4.slab,
 .text-5.slab {
-  line-height: 1.1 !important;
+  line-height: 1.1;
 }
 
 // List styles
@@ -112,75 +112,75 @@
 .list-unstyled {
   margin-left:  0;
   padding-left: 0;
-  list-style:   none !important;
+  list-style:   none;
 }
 
 // Link Styles
 // -------------------------
 
 .link-blue {
-  color: $text-blue !important;
+  color: $text-blue;
 
   path {
-    fill: $text-blue !important;
+    fill: $text-blue;
     }
 
-  &:hover { color: darken($text-blue, 20%) !important; 
-    
+  &:hover { color: darken($text-blue, 20%);
+
     path {
       transition: fill .15s ease 0s;
-      fill: darken($text-blue, 20%) !important;
+      fill: darken($text-blue, 20%);
       cursor: pointer;
     }
   }
 }
 
 .link-gray {
-  color: $text-gray !important;
-  
+  color: $text-gray;
+
   path {
-    fill: $text-gray !important;
+    fill: $text-gray;
     }
 
-  &:hover { color: $text-blue !important;
-  
+  &:hover { color: $text-blue;
+
     path {
         transition: fill .15s ease 0s;
-        fill: $text-blue !important;
+        fill: $text-blue;
         cursor: pointer;
     }
   }
 }
 
 .link-gray-lighter {
-  color: $text-gray-lightest !important;
+  color: $text-gray-lightest;
 
   path {
-    fill: $text-gray-lightest !important;
+    fill: $text-gray-lightest;
     }
 
-  &:hover { color: $text-gray !important; 
+  &:hover { color: $text-gray;
 
     path {
         transition: fill .15s ease 0s;
-        fill: $text-gray !important;
+        fill: $text-gray;
         cursor: pointer;
     }
   }
 }
 
 .link-white {
-  color: $text-white !important;
+  color: $text-white;
 
   path {
-    fill: $text-white !important;
+    fill: $text-white;
     }
 
-  &:hover { color: darken($text-white, 20%) !important; 
+  &:hover { color: darken($text-white, 20%);
 
     path {
         transition: fill .15s ease 0s;
-        fill: darken($text-white, 20%) !important;
+        fill: darken($text-white, 20%);
         cursor: pointer;
     }
   }
@@ -191,41 +191,41 @@
 // -------------------------
 
 .link-facebook {
-  color: $text-facebook !important;
-  &:hover { color: darken($text-facebook, 20%) !important; }
+  color: $text-facebook;
+  &:hover { color: darken($text-facebook, 20%); }
 }
 
 .link-twitter {
-  color: $text-twitter !important;
-  &:hover { color: darken($text-twitter, 20%) !important; }
+  color: $text-twitter;
+  &:hover { color: darken($text-twitter, 20%); }
 }
 
 .link-google {
-  color: $text-google !important;
-  &:hover { color: darken($text-google, 20%) !important; }
+  color: $text-google;
+  &:hover { color: darken($text-google, 20%); }
 }
 
 .link-linkedin {
-  color: $text-linkedin !important;
-  &:hover { color: darken($text-linkedin, 20%) !important; }
+  color: $text-linkedin;
+  &:hover { color: darken($text-linkedin, 20%); }
 }
 
 .link-pinterest {
-  color: $text-pinterest !important;
-  &:hover { color: darken($text-pinterest, 20%) !important; }
+  color: $text-pinterest;
+  &:hover { color: darken($text-pinterest, 20%); }
 }
 
 .link-tumblr {
-  color: $text-tumblr !important;
-  &:hover { color: darken($text-tumblr, 20%) !important; }
+  color: $text-tumblr;
+  &:hover { color: darken($text-tumblr, 20%); }
 }
 
 .link-youtube {
-  color: $text-youtube !important;
-  &:hover { color: darken($text-youtube, 20%) !important; }
+  color: $text-youtube;
+  &:hover { color: darken($text-youtube, 20%); }
 }
 
 .link-instagram {
-  color: $text-instagram !important;
-  &:hover { color: darken($text-instagram, 20%) !important; }
+  color: $text-instagram;
+  &:hover { color: darken($text-instagram, 20%); }
 }

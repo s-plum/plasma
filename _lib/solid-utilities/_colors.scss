@@ -5,81 +5,81 @@
 // Color Fills
 // -------------------------
 
-.fill-red {               background-color: $fill-red              !important; }
-.fill-red-lighter {       background-color: $fill-red-lighter      !important; }
-.fill-pink {              background-color: $fill-pink             !important; }
-.fill-blue {              background-color: $fill-blue             !important; }
-.fill-yellow {            background-color: $fill-yellow           !important; }
-.fill-yellow-lighter {    background-color: $fill-yellow-lighter   !important; }
-.fill-purple {            background-color: $fill-purple           !important; }
-.fill-teal {              background-color: $fill-teal             !important; }
-.fill-green {             background-color: $fill-green            !important; }
-.fill-green-lighter {     background-color: $fill-green-lighter    !important; }
-.fill-orange {            background-color: $fill-orange           !important; }
-.fill-promoted-orange {   background-color: $fill-promoted-orange  !important; }
-.fill-gray-lighter {      background-color: $fill-gray-lighter     !important; }
-.fill-gray {              background-color: $fill-gray             !important; }
-.fill-gray-darker {       background-color: $fill-gray-darker      !important; }
-.fill-white {             background-color: $fill-white            !important; }
+.fill-red {               background-color: $fill-red             ; }
+.fill-red-lighter {       background-color: $fill-red-lighter     ; }
+.fill-pink {              background-color: $fill-pink            ; }
+.fill-blue {              background-color: $fill-blue            ; }
+.fill-yellow {            background-color: $fill-yellow          ; }
+.fill-yellow-lighter {    background-color: $fill-yellow-lighter  ; }
+.fill-purple {            background-color: $fill-purple          ; }
+.fill-teal {              background-color: $fill-teal            ; }
+.fill-green {             background-color: $fill-green           ; }
+.fill-green-lighter {     background-color: $fill-green-lighter   ; }
+.fill-orange {            background-color: $fill-orange          ; }
+.fill-promoted-orange {   background-color: $fill-promoted-orange ; }
+.fill-gray-lighter {      background-color: $fill-gray-lighter    ; }
+.fill-gray {              background-color: $fill-gray            ; }
+.fill-gray-darker {       background-color: $fill-gray-darker     ; }
+.fill-white {             background-color: $fill-white           ; }
 
 
 // Social Fill Colors
 // -------------------------
 
-.fill-facebook {          background-color: $fill-facebook        !important; }
-.fill-twitter {           background-color: $fill-twitter         !important; }
-.fill-google {            background-color: $fill-google          !important; }
-.fill-linkedin {          background-color: $fill-linkedin        !important; }
-.fill-pinterest {         background-color: $fill-pinterest       !important; }
-.fill-tumblr {            background-color: $fill-tumblr          !important; }
-.fill-youtube {           background-color: $fill-youtube         !important; }
-.fill-instagram {         background-color: $fill-instagram       !important; }
-.fill-vine {              background-color: $fill-vine            !important; }
-.fill-snapchat {          background-color: $fill-snapchat        !important; }
-.fill-buzzfeed {          background-color: $fill-buzzfeed        !important; }
+.fill-facebook {          background-color: $fill-facebook       ; }
+.fill-twitter {           background-color: $fill-twitter        ; }
+.fill-google {            background-color: $fill-google         ; }
+.fill-linkedin {          background-color: $fill-linkedin       ; }
+.fill-pinterest {         background-color: $fill-pinterest      ; }
+.fill-tumblr {            background-color: $fill-tumblr         ; }
+.fill-youtube {           background-color: $fill-youtube        ; }
+.fill-instagram {         background-color: $fill-instagram      ; }
+.fill-vine {              background-color: $fill-vine           ; }
+.fill-snapchat {          background-color: $fill-snapchat       ; }
+.fill-buzzfeed {          background-color: $fill-buzzfeed       ; }
 
 // Text Colors
 // -------------------------
 
-.text-gray {              color: $text-gray            !important; }
-.text-white {             color: $text-white           !important; }
-.text-gray-lighter {      color: $text-gray-lighter    !important; }
-.text-gray-lightest {     color: $text-gray-lightest   !important; }
-.text-red {               color: $text-red             !important; }
-.text-pink {              color: $text-pink            !important; }
-.text-orange {            color: $text-orange          !important; }
-.text-promoted-orange {   color: $text-promoted-orange !important; }
-.text-purple {            color: $text-purple          !important; }
-.text-green {             color: $text-green           !important; }
-.text-blue {              color: $text-blue            !important; }
+.text-gray {              color: $text-gray           ; }
+.text-white {             color: $text-white          ; }
+.text-gray-lighter {      color: $text-gray-lighter   ; }
+.text-gray-lightest {     color: $text-gray-lightest  ; }
+.text-red {               color: $text-red            ; }
+.text-pink {              color: $text-pink           ; }
+.text-orange {            color: $text-orange         ; }
+.text-promoted-orange {   color: $text-promoted-orange; }
+.text-purple {            color: $text-purple         ; }
+.text-green {             color: $text-green          ; }
+.text-blue {              color: $text-blue           ; }
 
 
 // SVG Fill Colors
 // -------------------------
 
-.svg-gray {              fill: $text-gray           !important; }
-.svg-white {             fill: $text-white          !important; }
-.svg-gray-lighter {      fill: $text-gray-lighter   !important; }
-.svg-gray-lightest {     fill: $text-gray-lightest  !important; }
-.svg-red {               fill: $text-red            !important; }
-.svg-pink {              fill: $text-pink           !important; }
-.svg-orange {            fill: $text-orange         !important; }
-.svg-purple {            fill: $text-purple         !important; }
-.svg-teal {              fill: $fill-teal           !important; }
-.svg-green {             fill: $text-green          !important; }
-.svg-blue {              fill: $text-blue           !important; }
+.svg-gray {              fill: $text-gray          ; }
+.svg-white {             fill: $text-white         ; }
+.svg-gray-lighter {      fill: $text-gray-lighter  ; }
+.svg-gray-lightest {     fill: $text-gray-lightest ; }
+.svg-red {               fill: $text-red           ; }
+.svg-pink {              fill: $text-pink          ; }
+.svg-orange {            fill: $text-orange        ; }
+.svg-purple {            fill: $text-purple        ; }
+.svg-teal {              fill: $fill-teal          ; }
+.svg-green {             fill: $text-green         ; }
+.svg-blue {              fill: $text-blue          ; }
 
 
 // SVG Fill Social Colors
 // -------------------------
-.svg-facebook {          fill: $fill-facebook        !important; }
-.svg-twitter {           fill: $fill-twitter         !important; }
-.svg-google {            fill: $fill-google          !important; }
-.svg-linkedin {          fill: $fill-linkedin        !important; }
-.svg-pinterest {         fill: $fill-pinterest       !important; }
-.svg-tumblr {            fill: $fill-tumblr          !important; }
-.svg-youtube {           fill: $fill-youtube         !important; }
-.svg-instagram {         fill: $fill-instagram       !important; }
-.svg-vine {              fill: $fill-vine            !important; }
-.svg-snapchat {          fill: $fill-snapchat        !important; }
-.svg-buzzfeed {          fill: $fill-buzzfeed        !important; }
+.svg-facebook {          fill: $fill-facebook       ; }
+.svg-twitter {           fill: $fill-twitter        ; }
+.svg-google {            fill: $fill-google         ; }
+.svg-linkedin {          fill: $fill-linkedin       ; }
+.svg-pinterest {         fill: $fill-pinterest      ; }
+.svg-tumblr {            fill: $fill-tumblr         ; }
+.svg-youtube {           fill: $fill-youtube        ; }
+.svg-instagram {         fill: $fill-instagram      ; }
+.svg-vine {              fill: $fill-vine           ; }
+.svg-snapchat {          fill: $fill-snapchat       ; }
+.svg-buzzfeed {          fill: $fill-buzzfeed       ; }

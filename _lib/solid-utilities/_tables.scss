@@ -6,7 +6,7 @@
 // -------------------------
 
 .table-border {
-  border:        $border !important;
+  border:        $border;
 
   th               { border-bottom: $border; }
   tr td            { border-bottom: $border; }
@@ -24,11 +24,11 @@
 // -------------------------
 
 .table {
-  border-collapse: separate !important;
-  border-spacing:  0        !important;
-  display:         table    !important;
+  border-collapse: separate;
+  border-spacing:  0       ;
+  display:         table   ;
 }
 
 .td,
-.th { display: table-cell !important; }
-.tr { display: table-row !important; }
+.th { display: table-cell; }
+.tr { display: table-row; }
